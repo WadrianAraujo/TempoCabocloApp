@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textColor="@color/sonic_silver"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintEnd_toStartOf="@id/imageCurrentLocation"
