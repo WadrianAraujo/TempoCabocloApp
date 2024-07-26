@@ -13,6 +13,14 @@ data class CurrentLocation(
     val longitude: Double? = null
 ) : WeatherData()
 
+data class CurrentWeather(
+    val icon: String,
+    val temperature: Float,
+    val wind: Float,
+    val humidity: Float,
+    val chanceOfRain: Int
+): WeatherData()
+
 private fun getCurrentDate(): String {
     val currentData = Date()
     val formatter = SimpleDateFormat("d MMMM yyyy", Locale.getDefault())

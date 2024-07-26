@@ -7,6 +7,7 @@ import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationTokenSource
 import com.wax.tempocabocloapp.data.CurrentLocation
 import com.wax.tempocabocloapp.data.RemoteLocation
+import com.wax.tempocabocloapp.data.RemoteWeatherData
 import com.wax.tempocabocloapp.network.api.WeatherAPI
 
 class WeatherDataRepository(private val weatherAPI: WeatherAPI) {
@@ -52,8 +53,13 @@ class WeatherDataRepository(private val weatherAPI: WeatherAPI) {
         } ?: currentLocation
     }
 
-    suspend fun searchLocation(query: String):List<RemoteLocation>?{
+    suspend fun searchLocation(query: String): List<RemoteLocation>? {
         val response = weatherAPI.searchLocation(query = query)
+        return if (response.isSuccessful) response.body() else null
+    }
+
+    suspend fun getWeatherData(latitude: Double, longitude: Double): RemoteWeatherData? {
+        val response = weatherAPI.getWeatherData(query = "$latitude,$longitude")
         return if (response.isSuccessful) response.body() else null
     }
 
