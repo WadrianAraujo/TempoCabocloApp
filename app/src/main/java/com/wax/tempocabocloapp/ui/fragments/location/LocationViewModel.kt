@@ -36,7 +36,7 @@ class LocationViewModel(private val weatherDataRepository: WeatherDataRepository
 
     data class SearchResultDataState(
         val isLoading: Boolean = false,
-        val searchResult: List<RemoteLocation>?,
+        val locations: List<RemoteLocation>?,
         val error: String? = null
     )
 }
