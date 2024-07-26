@@ -1,6 +1,7 @@
 package com.wax.tempocabocloapp.utils
 
 import android.app.Application
+import com.wax.tempocabocloapp.dependency_injection.networkModule
 import com.wax.tempocabocloapp.dependency_injection.repositoryModule
 import com.wax.tempocabocloapp.dependency_injection.serializerModule
 import com.wax.tempocabocloapp.dependency_injection.storageModule
@@ -20,7 +21,8 @@ class AppConfig : Application() {
                     repositoryModule,
                     viewModelModule,
                     serializerModule,
-                    storageModule
+                    storageModule,
+                    networkModule
                 )
             )
         }
